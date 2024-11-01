@@ -1,5 +1,6 @@
 package pl.eu.pjatk.Spring_Boot.service;
 
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.eu.pjatk.Spring_Boot.model.Car;
@@ -18,9 +19,15 @@ public class CarService {
     public CarService(CarRepository repository, StringUtilsService stringUtilsService) {
         this.repository = repository;
         this.stringUtilsService = stringUtilsService;
-        this.repository.save(new Car("Tesla", "white"));
-        this.repository.save(new Car("Lamborghini", "red"));
-        this.repository.save(new Car("BMW", "black"));
+    }
+
+    @PostConstruct
+    public void init() {
+        if (this.repository.count() == 0) {
+            this.repository.save(new Car("Tesla", "white"));
+            this.repository.save(new Car("Lamborghini", "red"));
+            this.repository.save(new Car("BMW", "black"));
+        }
     }
 
     public List<Car> getCarByBrand (String brand) {

@@ -1,11 +1,10 @@
-package pl.eu.pjatk.Spring_Boot;
+package pl.eu.pjatk.Spring_Boot.service;
 
 import org.junit.jupiter.api.Test;
-import pl.eu.pjatk.Spring_Boot.service.StringUtilsService;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class StringUtilsServiceTest {
+class StringUtilsServiceTest {
 
     @Test
     public void toUpperCase() {
