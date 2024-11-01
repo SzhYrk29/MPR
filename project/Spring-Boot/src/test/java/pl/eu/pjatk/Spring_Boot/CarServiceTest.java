@@ -8,7 +8,7 @@ import pl.eu.pjatk.Spring_Boot.service.StringUtilsService;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class CarServiceTests {
+public class CarServiceTest {
 
     private CarRepository carRepository;
     private StringUtilsService stringUtilsService;
